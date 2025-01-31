@@ -388,6 +388,7 @@ label .label-text:before {
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
+
 }
 
 .task-form {
@@ -431,4 +432,58 @@ label .label-text:before {
 
 .close-btn:hover {
   color: red;  /* Color rojo al pasar el mouse por encima */
+}
+
+/* Estilos para los elementos del formulario */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Botón de enviar */
+.btn-submit {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+form{
+  padding: 70px;
+  background-color: white;
+  width: 500px;
+  margin-left: 37%;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px #80beff;
 }
