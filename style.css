@@ -407,8 +407,28 @@ label .label-text:before {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 150px;;
+  bottom: 20px;
 }
 
 .btn-show-form:hover {
   background-color: #0056b3;
+}
+
+
+/* Botón de cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.close-btn:hover {
+  color: red;  /* Color rojo al pasar el mouse por encima */
 }
