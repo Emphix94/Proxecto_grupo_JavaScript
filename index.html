@@ -1,247 +1,310 @@
 <!DOCTYPE html>
 <html lang="ht
 " dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Task Mangement</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="task-manager">
-      <!-- left bar starts -->
-      <div class="left-bar">
-          <div class="upper-part">
-            <div class="actions">
-              <div class="circle"></div>
-              <div class="circle-2"></div>
-            </div>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Task Mangement</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="task-manager">
+    <!-- left bar starts -->
+    <div class="left-bar">
+      <div class="upper-part">
+        <div class="actions">
+          <div class="circle"></div>
+          <div class="circle-2"></div>
+        </div>
+      </div>
 
       <!-- left content starts -->
-        <div class="left-content">
-          <ul class="action-list">
-            <li class="item">
-              <img class="feather feather-inbox" src="svg/inbox.svg" alt="" />
-              <span>Reuniones</span>
-            </li>
-            <li class="item">
-              <img class="feather feather-star" src="svg/star.svg" alt="" />
-              <span> DEV página web</span>
-            </li>
-            <li class="item">
-              <img class="feather feather-calendar" src="svg/calender.svg" alt="" />
-              <span>DEV aplicación movil</span>
-            </li>
-            <li class="item">
-              <img class="feather feather-hash" src="svg/hash.svg" alt="" />
-              <span>Despliegue</span>
-            </li>
-          </ul>
+      <div class="left-content">
+        <ul class="action-list">
+          <li class="item">
+            <img class="feather feather-inbox" src="svg/inbox.svg" alt="" />
+            <span>Reuniones</span>
+          </li>
+          <li class="item">
+            <img class="feather feather-star" src="svg/star.svg" alt="" />
+            <span> DEV página web</span>
+          </li>
+          <li class="item">
+            <img class="feather feather-calendar" src="svg/calender.svg" alt="" />
+            <span>DEV aplicación movil</span>
+          </li>
+          <li class="item">
+            <img class="feather feather-hash" src="svg/hash.svg" alt="" />
+            <span>Despliegue</span>
+          </li>
+        </ul>
+      </div>
+      <!-- left content ends -->
+    </div>
+    <!-- left bar ends -->
+
+    <!-- page content starts -->
+    <div class="page-content">
+      <div class="header">Gestión de Tareas
+        <button id="show-form-btn" class="btn-show-form">Agregar tarea
+
+        </button>
+
+
+
+      </div>
+
+
+      <div>
+
+      </div>
+      <!-- contnet categories starts -->
+      <div class="content-categories">
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-1" />
+          <label class="category" for="opt-1">Listar todas</label>
         </div>
-<!-- left content ends -->
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
+          <label class="category" for="opt-2">Alto</label>
+        </div>
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-3" />
+          <label class="category" for="opt-3">Medio</label>
+        </div>
+        <div class="label-wrapper">
+          <input class="nav-item" name="nav" type="radio" id="opt-4" />
+          <label class="category" for="opt-4">Bajo</label>
+        </div>
       </div>
-<!-- left bar ends -->
+      <!--  -->
+      <!-- contemt categories ends -->
+      <!-- tasks wrapper starts -->
+      <div class="tasks-wrapper">
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-1" checked />
+          <label for="item-1">
+            <span class="label-text">Dashboard Design Implementation</span>
+          </label>
+          <span class="tag approved">Done</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-2" checked />
+          <label for="item-2">
+            <span class="label-text">Create a userflow</span>
+          </label>
+          <span class="tag progress">In Progress</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-3" />
+          <label for="item-3">
+            <span class="label-text">Application Implementation</span>
+          </label>
+          <span class="tag review">In Review</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-4" />
+          <label for="item-4">
+            <span class="label-text">Create a Dashboard Design</span>
+          </label>
+          <span class="tag progress">In Progress</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-5" />
+          <label for="item-5">
+            <span class="label-text">Create a Web Application Design</span>
+          </label>
+          <span class="tag approved">Approved</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-6" />
+          <label for="item-6">
+            <span class="label-text">Interactive Design</span>
+          </label>
+          <span class="tag review">In Review</span>
+        </div>
+        <div class="header upcoming">Tareas próximas</div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-7" />
+          <label for="item-7">
+            <span class="label-text">Dashboard Design Implementation</span>
+          </label>
+          <span class="tag waiting">Waiting</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-8" />
+          <label for="item-8">
+            <span class="label-text">Create a userflow</span>
+          </label>
+          <span class="tag waiting">Waiting</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-9" />
+          <label for="item-9">
+            <span class="label-text">Application Implementation</span>
+          </label>
+          <span class="tag waiting">Waiting</span>
+        </div>
+        <div class="task">
+          <input class="task-item" name="task" type="checkbox" id="item-10" />
+          <label for="item-10">
+            <span class="label-text">Create a Dashboard Design</span>
+          </label>
+          <span class="tag waiting">Waiting</span>
+        </div>
+      </div>
+      <!-- tasks wrapper ends -->
+    </div>
+    <!--  -->
+    <!-- page content ends -->
 
-<!-- page content starts -->
-<div class="page-content">
-  <div class="header">Gestión de Tareas
-    <button class="botonAgregarTarea" type="submit" name="btnNuevaTarea" id="btnNuevaTarea">Agregar tarea
+    <!-- right bar starts -->
+    <div class="right-bar">
+      <div class="top-part">
+        <img class="feather feather-users" src="svg/users.svg" alt="" />
+        <div class="count">6</div>
+      </div>
+      <div class="header">Tareas próximas a expirar:</div>
+      <div class="right-content">
+        <div class="task-box yellow">
+          <div class="description-task">
+            <div class="time">08:00 - 09:00 AM</div>
+            <div class="task-name">Actualizar BAse de datos</div>
+          </div>
+          <div class="more-buhtmltton"></div>
+          <div class="members">
+            <img src="images/1.png" alt="member-4" />
+          </div>
+        </div>
+        <div class="task-box blue">
+          <div class="description-task">
+            <div class="time">10:00 - 11:00 AM</div>
+            <div class="task-name">Design Meeting</div>
+          </div>
+          <div class="more-button"></div>
+          <div class="members">
+            <img src="images/img5.jpg" alt="member" />
+            <img src="images/img6.jpg" alt="member-2" />
+            <img src="images/img7.jpg" alt="member-3" />
+          </div>
+        </div>
+        <div class="task-box red">
+          <div class="description-task">
+            <div class="time">01:00 - 02:00 PM</div>
+            <div class="task-name">Team Meeting</div>
+          </div>
+          <div class="more-button"></div>
+          <div class="members">
+            <img src="images/img1.jpg" alt="member" />
+            <img src="images/img2.jpg" alt="member-2" />
+            <img src="images/img3.jpg" alt="member-3" />
+            <img src="images/img4.jpg" alt="member-4" />
+          </div>
+        </div>
+        <div class="task-box green">
+          <div class="description-task">
+            <div class="time">03:00 - 04:00 PM</div>
+            <div class="task-name">Release Event</div>
+          </div>
+          <div class="more-button"></div>
+          <div class="members">
+            <img src="images/img5.jpg" alt="member" />
+            <img src="images/img6.jpg" alt="member-2" />
+            <img src="images/img7.jpg" alt="member-3" />
+            <img src="images/img8.jpg" alt="member-4" />
+            <img src="images/img9.jpg" alt="member-5" />
+          </div>
+        </div>
+        <div class="task-box blue">
+          <div class="description-task">
+            <div class="time">08:00 - 09:00 PM</div>
+            <div class="task-name">Release Event</div>
+          </div>
+          <div class="more-button"></div>
+          <div class="members">
+            <img src="images/img5.jpg" alt="member" />
+            <img src="images/img6.jpg" alt="member-2" />
+            <img src="images/img7.jpg" alt="member-3" />
+            <img src="images/img8.jpg" alt="member-4" />
+            <img src="images/img9.jpg" alt="member-5" />
+          </div>
+        </div>
+        <div class="task-box yellow">
+          <div class="description-task">
+            <div class="time">11:00 - 12:00 PM</div>
+            <div class="task-name">Practise</div>
+          </div>
+          <div class="more-button"></div>
+          <div class="members">
+            <img src="images/img1.jpg" alt="member" />
+            <img src="images/img2.jpg" alt="member-2" />
+            <img src="images/img3.jpg" alt="member-3" />
+            <img src="images/img4.jpg" alt="member-4" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- right bar ends -->
 
-    </button>
+
   </div>
+    <!-- Formulario para crear tarea (oculto inicialmente) -->
+    <div id="task-form-container" class="task-form" style="display: none;">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="task-name">Nombre de la Tarea</label>
+          <input type="text" id="task-name" name="task-name" placeholder="Escribe el nombre de la tarea" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-description">Descripción</label>
+          <textarea id="task-description" name="task-description" placeholder="Escribe una breve descripción" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-priority">Prioridad</label>
+          <select id="task-priority" name="task-priority" required>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-category">Categoría</label>
+          <select id="task-category" name="task-category" required>
+            <option value="reunion">Reunión</option>
+            <option value="dev-web">Desarrollo Página Web</option>
+            <option value="dev-app">Desarrollo Aplicación Móvil</option>
+            <option value="despliegue">Despliegue</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="task-image">Imagen de la Tarea</label>
+          <input type="file" id="task-image" name="task-image" accept="image/*" />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-start-date">Fecha de Inicio</label>
+          <input type="date" id="task-start-date" name="task-start-date" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="task-end-date">Fecha de Fin</label>
+          <input type="date" id="task-end-date" name="task-end-date" required />
+        </div>
+  
+        <button type="submit" class="btn-submit">Crear Tarea</button>
+      </form>
+    </div>
 
-  <div>
+
+    <!-- Enlace js -->
+    <script src="scripts/script.js"></script>
+
     
-  </div>
-  <!-- contnet categories starts -->
-  <div class="content-categories">
-    <div class="label-wrapper">
-      <input class="nav-item" name="nav" type="radio" id="opt-1" />
-      <label class="category" for="opt-1">Listar todas</label>
-    </div>
-    <div class="label-wrapper">
-      <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
-      <label class="category" for="opt-2">Alto</label>
-    </div>
-    <div class="label-wrapper">
-      <input class="nav-item" name="nav" type="radio" id="opt-3" />
-      <label class="category" for="opt-3">Medio</label>
-    </div>
-    <div class="label-wrapper">
-      <input class="nav-item" name="nav" type="radio" id="opt-4" />
-      <label class="category" for="opt-4">Bajo</label>
-    </div>
-  </div>
-  <!--  -->
-  <!-- contemt categories ends -->
-  <!-- tasks wrapper starts -->
-  <div class="tasks-wrapper">
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-1" checked />
-      <label for="item-1">
-        <span class="label-text">Dashboard Design Implementation</span>
-      </label>
-      <span class="tag approved">Done</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-2" checked />
-      <label for="item-2">
-        <span class="label-text">Create a userflow</span>
-      </label>
-      <span class="tag progress">In Progress</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-3" />
-      <label for="item-3">
-        <span class="label-text">Application Implementation</span>
-      </label>
-      <span class="tag review">In Review</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-4" />
-      <label for="item-4">
-        <span class="label-text">Create a Dashboard Design</span>
-      </label>
-      <span class="tag progress">In Progress</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-5" />
-      <label for="item-5">
-        <span class="label-text">Create a Web Application Design</span>
-      </label>
-      <span class="tag approved">Approved</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-6" />
-      <label for="item-6">
-        <span class="label-text">Interactive Design</span>
-      </label>
-      <span class="tag review">In Review</span>
-    </div>
-    <div class="header upcoming">Tareas próximas</div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-7" />
-      <label for="item-7">
-        <span class="label-text">Dashboard Design Implementation</span>
-      </label>
-      <span class="tag waiting">Waiting</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-8" />
-      <label for="item-8">
-        <span class="label-text">Create a userflow</span>
-      </label>
-      <span class="tag waiting">Waiting</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-9" />
-      <label for="item-9">
-        <span class="label-text">Application Implementation</span>
-      </label>
-      <span class="tag waiting">Waiting</span>
-    </div>
-    <div class="task">
-      <input class="task-item" name="task" type="checkbox" id="item-10" />
-      <label for="item-10">
-        <span class="label-text">Create a Dashboard Design</span>
-      </label>
-      <span class="tag waiting">Waiting</span>
-    </div>
-  </div>
-  <!-- tasks wrapper ends -->
-</div>
-<!--  -->
-<!-- page content ends -->
+</body>
 
-<!-- right bar starts -->
-<div class="right-bar">
-  <div class="top-part">
-    <img class="feather feather-users" src="svg/users.svg" alt="" />
-    <div class="count">6</div>
-  </div>
-  <div class="header">Tareas próximas a expirar:</div>
-  <div class="right-content">
-    <div class="task-box yellow">
-      <div class="description-task">
-        <div class="time">08:00 - 09:00 AM</div>
-        <div class="task-name">Actualizar BAse de datos</div>
-      </div>
-      <div class="more-buhtmltton"></div>
-      <div class="members">
-        <img src="images/1.png" alt="member-4" />
-      </div>
-    </div>
-    <div class="task-box blue">
-      <div class="description-task">
-        <div class="time">10:00 - 11:00 AM</div>
-        <div class="task-name">Design Meeting</div>
-      </div>
-      <div class="more-button"></div>
-      <div class="members">
-        <img src="images/img5.jpg" alt="member" />
-        <img src="images/img6.jpg" alt="member-2" />
-        <img src="images/img7.jpg" alt="member-3" />
-      </div>
-    </div>
-    <div class="task-box red">
-      <div class="description-task">
-        <div class="time">01:00 - 02:00 PM</div>
-        <div class="task-name">Team Meeting</div>
-      </div>
-      <div class="more-button"></div>
-      <div class="members">
-        <img src="images/img1.jpg" alt="member" />
-        <img src="images/img2.jpg" alt="member-2" />
-        <img src="images/img3.jpg" alt="member-3" />
-        <img src="images/img4.jpg" alt="member-4" />
-      </div>
-    </div>
-    <div class="task-box green">
-      <div class="description-task">
-        <div class="time">03:00 - 04:00 PM</div>
-        <div class="task-name">Release Event</div>
-      </div>
-      <div class="more-button"></div>
-      <div class="members">
-        <img src="images/img5.jpg" alt="member" />
-        <img src="images/img6.jpg" alt="member-2" />
-        <img src="images/img7.jpg" alt="member-3" />
-        <img src="images/img8.jpg" alt="member-4" />
-        <img src="images/img9.jpg" alt="member-5" />
-      </div>
-    </div>
-    <div class="task-box blue">
-      <div class="description-task">
-        <div class="time">08:00 - 09:00 PM</div>
-        <div class="task-name">Release Event</div>
-      </div>
-      <div class="more-button"></div>
-      <div class="members">
-        <img src="images/img5.jpg" alt="member" />
-        <img src="images/img6.jpg" alt="member-2" />
-        <img src="images/img7.jpg" alt="member-3" />
-        <img src="images/img8.jpg" alt="member-4" />
-        <img src="images/img9.jpg" alt="member-5" />
-      </div>
-    </div>
-    <div class="task-box yellow">
-      <div class="description-task">
-        <div class="time">11:00 - 12:00 PM</div>
-        <div class="task-name">Practise</div>
-      </div>
-      <div class="more-button"></div>
-      <div class="members">
-        <img src="images/img1.jpg" alt="member" />
-        <img src="images/img2.jpg" alt="member-2" />
-        <img src="images/img3.jpg" alt="member-3" />
-        <img src="images/img4.jpg" alt="member-4" />
-      </div>
-    </div>
-  </div>
-</div>
-<!-- right bar ends -->
-
-
-  </div>
-  </body>
 </html>
