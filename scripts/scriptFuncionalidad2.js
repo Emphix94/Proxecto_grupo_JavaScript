@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const taskCategory = document.querySelector("#task-category").value;
         const taskStartDate = document.querySelector("#task-start-date").value;
         const taskEndDate = document.querySelector("#task-end-date").value;
+        const image = document.querySelector("#task-image").value;
 
         // Determinar clase de prioridad
         let priorityClass = "";
@@ -37,9 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
         taskBox.classList.add("task-box", priorityClass);
         taskBox.innerHTML = `
             <div class="description-task">
+                <div class="members">
+                    <img src="images/1.png" alt="member-4" />
+                </div>
                 <div class="time">${taskStartDate} - ${taskEndDate}</div>
                 <div class="task-name">${taskName}</div>
                 <div class="task-desc">${taskDescription}</div>
+                <div class="task-desc">${taskPriority}</div>
+                <div class="task-desc">${taskCategory}</div>
             </div>
             <div class="more-button"></div>
         `;
