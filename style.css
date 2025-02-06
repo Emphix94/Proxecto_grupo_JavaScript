@@ -487,3 +487,53 @@ form{
   border-radius: 10px;
   box-shadow: 10px 5px 5px #80beff;
 }
+
+/* Estilos generales para la barra izquierda */
+.left-content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  margin-top: 180px;
+}
+
+/* Estilo de la lista de acciones */
+.action-list {
+  list-style: none;
+  padding: 0;
+}
+
+.action-list .item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-list .item:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Ocultar los botones de radio */
+.nav-priority {
+  display: none;
+}
+
+/* Estilo de las etiquetas de prioridad */
+.priority {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+/* Cambiar el fondo cuando se selecciona una prioridad */
+.nav-priority:checked + .priority {
+  background-color: #333;
+  width: 100%;
+  color: white;
+}
