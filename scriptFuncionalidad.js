@@ -170,15 +170,21 @@ document.addEventListener("DOMContentLoaded", function () {
             activateEditTask();
             activateDeleteTask();
     
-            tasks.slice(0, 3).forEach(task => {
-                const taskCard = document.createElement("div");
-                taskCard.classList.add("task-card", task.priorityClass);
-                taskCard.innerHTML = `
-                    <div class="task-name">${task.name}</div>
-                    <div class="task-time">Expira: ${task.endDate}</div>
-                `;
-                rightContent.appendChild(taskCard);
-            });
+            // Ordenar las tareas por fecha de expiración antes de mostrarlas
+            tasks
+                .sort((a, b) => new Date(a.endDate) - new Date(b.endDate)) // Orden ascendente (más próximas primero)
+                .slice(0, 20)
+                .forEach(task => {
+                    const taskCard = document.createElement("div");
+                    taskCard.classList.add("task-card", task.priorityClass);
+                    taskCard.innerHTML = `
+                        <div class="task-derecha">
+                            <div class="task-name">${task.name}</div>
+                            <div class="task-time">Expira: ${task.endDate}</div>
+                        </div>
+                    `;
+                    rightContent.appendChild(taskCard);
+                });
         }
     
         function activateMoreButton() {
