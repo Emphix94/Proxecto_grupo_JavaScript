@@ -607,7 +607,7 @@ form{
 .task-image {
   width: 100%;
   max-width: 300px;
-  height: 200px; 
+  height: 50px; 
   object-fit: cover; 
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -686,7 +686,7 @@ form{
   margin: 10px;
   border-radius: 20px; /* Se aplica a toda la tarjeta */
   padding: 10px;
-  width: 100%;
+  width: 91%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
 }
