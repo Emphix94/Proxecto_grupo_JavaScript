@@ -124,21 +124,25 @@ document.addEventListener("DOMContentLoaded", function () {
             taskWrapper.appendChild(taskBox);
         });
 
-        // Actualizamos las "tareas próximas a expirar" (se muestran las 3 primeras tareas filtradas)
-        filteredTasks.slice(0, 3).forEach(item => {
-            const task = item.task;
+
+        tasks.slice(0, 20).forEach(task => {
             const taskCard = document.createElement("div");
-            taskCard.classList.add("task-card", task.priorityClass);
+            taskCard.classList.add("task-card", task.priorityClass); // Aplica el estilo correcto
             taskCard.innerHTML = `
-                <div class="task-name">${task.name}</div>
-                <div class="task-time">Expira: ${task.endDate}</div>
+                <div class="task-derecha">
+                    <div class="task-name">${task.name}</div>
+                    <div class="task-time">Expira: ${task.endDate}</div>
+                </div>
             `;
             rightContent.appendChild(taskCard);
         });
+        
+
 
         activateMoreButton();
         activateEditTask();
         activateDeleteTask();
+
     }
 
     function activateMoreButton() {
