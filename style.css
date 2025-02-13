@@ -686,6 +686,7 @@ form{
   width: 30px;   /* Ajusta el ancho deseado */
   height: 30px;  /* Ajusta el alto deseado */
   object-fit: cover; /* Para mantener la proporción y recortar si es necesario */
+}
 
 .task-card {
   margin: 10px;
