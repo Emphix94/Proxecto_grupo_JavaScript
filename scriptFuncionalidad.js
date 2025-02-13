@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (editIndex !== null) {
             tasks[editIndex] = taskData;
         } else {
-            tasks.push(taskData);
+            tasks.unshift(taskData);
         }
         localStorage.setItem("tasks", JSON.stringify(tasks));
         updateTasksDisplay();
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let tasksWithIndex = tasks.map((task, index) => ({ task, index }));
 
         // Ordenamos las tareas por fecha de finalización
-        tasksWithIndex.sort((a, b) => new Date(a.task.endDate) - new Date(b.task.endDate));
+        //tasksWithIndex.sort((a, b) => new Date(a.task.endDate) - new Date(b.task.endDate));
 
         // Mapeo para relacionar el texto del filtro de la barra lateral con el valor almacenado en la tarea
         const categoryMapping = {
