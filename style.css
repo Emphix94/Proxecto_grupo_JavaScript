@@ -3,8 +3,8 @@
 * {
   box-sizing: border-box;
   outline: none;
-  
 }
+
 :root {
   --bg-color: #f5f8ff;
   --main-color: #353536;
@@ -69,7 +69,6 @@ ul {
     0 1.3px 10px rgba(0, 0, 0, 0.02), 0 2.2px 17.9px rgba(0, 0, 0, 0.024),
     0 4.2px 33.4px rgba(0, 0, 0, 0.029), 0 10px 80px rgba(0, 0, 0, 0.04);
   overflow: hidden;
-
 }
 
 .left-bar {
@@ -83,11 +82,13 @@ ul {
   padding: 40px;
 
 }
+
 .item {
   color: var(--main-color);
   margin-bottom: 14px;
   font-weight: 500;
 }
+
 .item img {
   width: 14px;
   height: 14px;
@@ -95,11 +96,12 @@ ul {
   margin-right: 10px;
 }
 
-.actions {
+/* .actions {
   padding: 12px;
   display: flex;
   justify-content: space-between;
 }
+
 .circle {
   border-radius: 50%;
   width: 10px;
@@ -107,13 +109,14 @@ ul {
   background-color: #fe4d46;
   box-shadow: 14px 0 0 0 #fbc023, 28px 0 0 0 #7dd21f;
 }
+
 .circle-2 {
   border-radius: 50%;
   width: 4px;
   height: 4px;
   background-color: #d5d7e3;
   box-shadow: -6px 0 0 0 #d5d7e3, 6px 0 0 0 #d5d7e3;
-}
+} */
 
 .page-content {
   display: flex;
@@ -122,11 +125,22 @@ ul {
   padding: 40px 20px 0 20px;
 }
 
+/* Cabecera */
 .page-content .header {
-  font-size: 26px;
-  color: var(--main-color);
-  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: #333;
+  
 }
+
+.page-content .header div {
+  font-size: 28px;
+  font-weight: bold;
+  color: linear-gradient(135deg, #007bff, #0056b3);
+}
+
 
 .content-categories {
   display: flex;
@@ -140,28 +154,51 @@ ul {
   display: none;
 }
 
+/* Estilos generales para los filtros */
 .category {
-  font-weight: 500;
-  color: var(--secondary-color);
-  border-bottom: 1px solid #ddd;
-  transition: 0.4s ease-in;
-  padding: 20px 30px;
-  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
 }
 
-#opt-1:checked + label,
-#opt-2:checked + label,
-#opt-3:checked + label,
-#opt-4:checked + label {
-  color: var(--checkbox-color);
-  border-bottom: 2px solid var(--checkbox-color);
+/* Ajustes de color cuando un filtro está seleccionado */
+#opt-1:checked + label {
+  color: var(--task-color);
+  border-bottom: 3px solid var(--task-color);
+  font-size: 20px; 
+}
+
+#opt-2:checked + label { /* Alto (Rojo) */
+  color: #e77f89;
+  border-bottom: 3px solid #e77f89;
+  font-size: 20px;
+}
+
+#opt-3:checked + label { /* Medio (Amarillo) */
+  color: #fbc023;
+  border-bottom: 3px solid #fbc023;
+  font-size: 20px;
+}
+
+#opt-4:checked + label { /* Bajo (Verde) */
+  color: #58c2a9;
+  border-bottom: 3px solid #58c2a9;
+  font-size: 20px;
+}
+
+/* Efecto al pasar el ratón sobre los filtros */
+.category:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
 /*  */
-
 .task-item {
   display: none;
 }
+
 .tasks-wrapper {
   padding: 30px 0;
   flex: 1;
@@ -180,15 +217,19 @@ ul {
   font-size: 13px;
   font-weight: 500;
 }
+
 .task:hover {
   transform: translatex(2px);
 }
+
 .task label {
   cursor: pointer;
 }
+
 label .label-text {
   position: relative;
 }
+
 label .label-text:before {
   content: '';
   position: absolute;
@@ -209,23 +250,28 @@ label .label-text:before {
   background-position: center;
   border: 1px solid var(--checkbox-color);
 }
+
 .tag {
   font-size: 10px;
   padding: 4px 8px;
   border-radius: 20px;
 }
+
 .tag.approved {
   background-color: var(--tag-color-one);
   color: var(--tag-color-text-one);
 }
+
 .tag.progress {
   background-color: var(--tag-color-two);
   color: var(--tag-color-text-two);
 }
+
 .tag.review {
   background-color: var(--tag-color-three);
   color: var(--tag-color-text-three);
 }
+
 .tag.waiting {
   background-color: var(--tag-color-four);
   color: var(--tag-color-text-four);
@@ -237,12 +283,11 @@ label .label-text:before {
   margin-bottom: 30px;
 }
 
-
-
 .members {
   display: flex;
   margin-top: 14px;
 }
+
 .members img {
   border-radius: 50%;
   width: 30px;
@@ -263,10 +308,12 @@ label .label-text:before {
   color: var(--main-text-color);
   margin-left: 30px;
 }
+
 .top-part {
   padding: 30px;
   align-self: flex-end;
 }
+
 .top-part img {
   width: 14px;
   height: 14px;
@@ -283,11 +330,13 @@ label .label-text:before {
   color: #fff;
   justify-content: center;
 }
+
 .right-content {
   padding: 10px 40px;
   overflow-y: auto;
   flex: 1;
 }
+
 .task-box {
   position: relative;
   border-radius: 12px;
@@ -297,9 +346,11 @@ label .label-text:before {
   cursor: pointer;
   box-shadow: 2px 2px 4px 0px rgba(235, 235, 235, 1);
 }
+
 .task-box:hover {
   transform: scale(1.02);
 }
+
 .time {
   margin-bottom: 6px;
   opacity: 0.4;
@@ -311,80 +362,86 @@ label .label-text:before {
   font-weight: 500;
   opacity: 0.6;
 }
+
 .yellow {
   background-color: var(--box-color);
 }
+
 .blue {
   background-color: var(--box-color-2);
 }
+
 .red {
   background-color: var(--box-color-3);
 }
+
 .green {
   background-color: var(--box-color-4);
 }
+
 .more-button {
   position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background-color: #8e92a4;
-  box-shadow: 0 -4px 0 0 #8e92a4, 0 4px 0 0 #8e92a4;
-  opacity: 0.4;
-  right: 20px;
-  top: 30px;
+  right: 15px;
+  top: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: #8e92a4;
   cursor: pointer;
+  padding: 5px;
+}
+
+.menu-options {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  right: 15px;
+  top: 35px;
+  z-index: 10;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.menu-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-options ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.menu-options ul li:hover {
+  background: #f0f0f0;
 }
 
 .botonAgregarTarea{
   display: flex;
     align-items: end;
     justify-content: end;
+    
 }
 
-
-@media screen and (max-width: 900px) {
-  .left-bar {
-    display: none;
-  }
-}
-@media screen and (max-width: 700px) {
-  .task-manager {
-    flex-direction: column;
-    overflow-y: auto;
-  }
-  .right-bar,
-  .page-content {
-    width: 100%;
-    display: block;
-  }
-  .tasks-wrapper {
-    height: auto;
-  }
-}
-@media screen and (max-width: 520px) {
-  .page-content {
-    padding: 40px 10px 0 10px;
-  }
-  .right-content {
-    padding: 10px 16px;
-  }
-  .category {
-    padding: 20px;
-  }
-}
 /*Formulario*/
 
 /* Estilo para el formulario, inicialmente oculto */
 #task-form-container {
-  display: none;  /* Está oculto por defecto */
-  position: fixed;  /* Lo hacemos fijo para que siempre esté en la parte superior */
+  display: none; 
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);  /* Fondo semitransparente */
-  z-index: 1000;  /* Asegura que se muestre sobre otros elementos */
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
@@ -402,14 +459,16 @@ label .label-text:before {
 
 /* Para el botón que muestra el formulario */
 .btn-show-form {
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
+  font-size: 16px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-left: 150px;;
-  bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-show-form:hover {
@@ -431,7 +490,7 @@ label .label-text:before {
 }
 
 .close-btn:hover {
-  color: red;  /* Color rojo al pasar el mouse por encima */
+  color: red; 
 }
 
 /* Estilos para los elementos del formulario */
@@ -476,7 +535,7 @@ textarea {
 }
 
 .btn-submit:hover {
-  background-color: #0056b3;
+  background-color: #d1d8e0;
 }
 
 form{
@@ -491,7 +550,6 @@ form{
 /* Estilos generales para la barra izquierda */
 .left-content {
   padding: 20px;
-  background-color: #f4f4f4;
   border-radius: 10px;
   margin-top: 180px;
 }
@@ -511,7 +569,7 @@ form{
 }
 
 .action-list .item:hover {
-  background-color: #e0e0e0;
+  background-color: #97a0d3;
   cursor: pointer;
 }
 
@@ -536,4 +594,89 @@ form{
   background-color: #333;
   width: 100%;
   color: white;
+}
+
+.task-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.task-image {
+  width: 100%;
+  max-width: 300px;
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-image-menu {
+  width: 100%;
+  max-width: 300px;
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; 
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* Fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: rgba(209, 206, 206, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Barra desplazable (thumb) con efecto neón */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px rgba(0, 214, 255, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(0, 99, 255, 1), rgba(0, 180, 255, 1));
+  box-shadow: 0px 0px 20px rgba(0, 214, 255, 1);
+  transform: scale(1.1); 
+}
+
+@media screen and (max-width: 900px) {
+  .left-bar {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .task-manager {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .right-bar,
+  .page-content {
+    width: 100%;
+    display: block;
+  }
+  .tasks-wrapper {
+    height: auto;
+  }
+}
+@media screen and (max-width: 520px) {
+  .page-content {
+    padding: 40px 10px 0 10px;
+  }
+  .right-content {
+    padding: 10px 16px;
+  }
+  .category {
+    padding: 20px;
+  }
 }
