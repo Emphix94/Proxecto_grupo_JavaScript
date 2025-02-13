@@ -73,11 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const taskBox = document.createElement("div");
             taskBox.classList.add("task-box", task.priorityClass);
             taskBox.dataset.index = index;
+
+            const categoryImages = {
+                "reunion": "images/reuniones.jpg",
+                "dev-web": "images/web.jpg",
+                "dev-app": "images/aplicaciones.jpg"
+            };
+            
+            let taskImageCategory = categoryImages[task.category] || "images/despliegue.jpg";
+            
             taskBox.innerHTML = `
                 <div class="task-content">
                     ${task.image ? `<div class="task-image-wrapper"><img src="${task.image}" alt="task-image" class="task-image"/></div>` : ""}
                     <div class="task-info">
-                        <div class="members"><img src="images/1.png" alt="member-4" /></div>
+                        <div class="members"><img src="${taskImageCategory}" alt="member-4" /></div>
                         <div class="time">Comienza: ${task.startDate} - Termina: ${task.endDate}</div>
                         <div class="task-name">${task.name}</div>
                         <div class="task-desc">${task.description}</div>

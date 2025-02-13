@@ -5,17 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeFormBtn = document.querySelector("#close-form-btn");
     const formContainer = document.querySelector("#task-form-container");
     const rightContent = document.querySelector(".right-content");
-    
-    // Filtros de prioridad (sección superior)
     const priorityFilters = document.querySelectorAll(".nav-item");
-    // Filtros de categoría (barra lateral)
-    const categoryFilters = document.querySelectorAll(".left-content .nav-priority");
-    
     const taskImageInput = document.querySelector("#task-image");
 
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    let currentFilter = "all"; // Filtro de prioridad ("all", "alta", "media", "baja")
-    let currentCategoryFilter = "all"; // Filtro de categoría; "all" muestra todas
+    let currentFilter = "all";
     let editIndex = null;
     document.querySelector("#opt-1").checked = true;
 
@@ -60,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (editIndex !== null) {
             tasks[editIndex] = taskData;
         } else {
-            tasks.push(taskData);
+            tasks.unshift(taskData);
         }
         localStorage.setItem("tasks", JSON.stringify(tasks));
         updateTasksDisplay();
@@ -72,41 +66,27 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTasksDisplay() {
         taskWrapper.innerHTML = "";
         rightContent.innerHTML = "";
+        //tasks.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
+        const filteredTasks = currentFilter === "all" ? tasks : tasks.filter(task => task.priority === currentFilter);
 
-        // Creamos un arreglo con cada tarea y su índice original para poder referenciarla correctamente
-        let tasksWithIndex = tasks.map((task, index) => ({ task, index }));
-
-        // Ordenamos las tareas por fecha de finalización
-        tasksWithIndex.sort((a, b) => new Date(a.task.endDate) - new Date(b.task.endDate));
-
-        // Mapeo para relacionar el texto del filtro de la barra lateral con el valor almacenado en la tarea
-        const categoryMapping = {
-            "Reunións": "reunion",
-            "Páginas web": "dev-web",
-            "Aplicacións móbiles": "dev-app",
-            "Despliegue": "despliegue"
-        };
-
-        // Filtramos las tareas aplicando ambos filtros: prioridad y categoría
-        let filteredTasks = tasksWithIndex.filter(item => {
-            const passesPriority = (currentFilter === "all" || item.task.priority === currentFilter);
-            const passesCategory = (currentCategoryFilter === "all" ||
-               item.task.category === categoryMapping[currentCategoryFilter]);
-            return passesPriority && passesCategory;
-        });
-
-        // Mostrar las tareas filtradas
-        filteredTasks.forEach(item => {
-            const task = item.task;
-            const originalIndex = item.index;
+        filteredTasks.forEach((task, index) => {
             const taskBox = document.createElement("div");
             taskBox.classList.add("task-box", task.priorityClass);
-            taskBox.dataset.index = originalIndex;
+            taskBox.dataset.index = index;
+
+            const categoryImages = {
+                "reunion": "images/reuniones.jpg",
+                "dev-web": "images/web.jpg",
+                "dev-app": "images/aplicaciones.jpg"
+            };
+            
+            let taskImageCategory = categoryImages[task.category] || "images/despliegue.jpg";
+            
             taskBox.innerHTML = `
                 <div class="task-content">
                     ${task.image ? `<div class="task-image-wrapper"><img src="${task.image}" alt="task-image" class="task-image"/></div>` : ""}
                     <div class="task-info">
-                        <div class="members"><img src="images/1.png" alt="member-4" /></div>
+                        <div class="members"><img src="${taskImageCategory}" alt="member-4" /></div>
                         <div class="time">Comienza: ${task.startDate} - Termina: ${task.endDate}</div>
                         <div class="task-name">${task.name}</div>
                         <div class="task-desc">${task.description}</div>
@@ -123,26 +103,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>`;
             taskWrapper.appendChild(taskBox);
         });
-
-
-        tasks.slice(0, 20).forEach(task => {
-            const taskCard = document.createElement("div");
-            taskCard.classList.add("task-card", task.priorityClass); // Aplica el estilo correcto
-            taskCard.innerHTML = `
-                <div class="task-derecha">
-                    <div class="task-name">${task.name}</div>
-                    <div class="task-time">Expira: ${task.endDate}</div>
-                </div>
-            `;
-            rightContent.appendChild(taskCard);
-        });
-        
-
-
         activateMoreButton();
         activateEditTask();
         activateDeleteTask();
 
+        tasks.slice(0, 3).forEach(task => {
+            const taskCard = document.createElement("div");
+            taskCard.classList.add("task-card", task.priorityClass);
+            taskCard.innerHTML = `
+                <div class="task-name">${task.name}</div>
+                <div class="task-time">Expira: ${task.endDate}</div>
+            `;
+            rightContent.appendChild(taskCard);
+        });
     }
 
     function activateMoreButton() {
@@ -183,8 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".delete-task").forEach(button => {
             button.addEventListener("click", function (event) {
                 event.stopPropagation();
+                
                 let taskElement = this.closest(".task-box");
                 let taskIndex = parseInt(taskElement.dataset.index, 10);
+
                 if (taskIndex > -1) {
                     tasks.splice(taskIndex, 1);
                     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -194,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Filtro por prioridad (sección superior)
     priorityFilters.forEach(filter => {
         filter.addEventListener("change", function () {
             const selectedId = this.id;
@@ -212,16 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     currentFilter = "baja"; 
                     break;
             }
-            updateTasksDisplay();
-        });
-    });
-
-    // Filtro por categoría (barra lateral)
-    categoryFilters.forEach(filter => {
-        filter.addEventListener("change", function () {
-            // Si se selecciona, actualizamos currentCategoryFilter con el valor de data-category.
-            // Si no se selecciona (o se desea quitar el filtro), se puede asignar "all".
-            currentCategoryFilter = this.checked ? this.dataset.category : "all";
             updateTasksDisplay();
         });
     });
